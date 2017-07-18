@@ -82,7 +82,7 @@ class HTMLToConfluenceParser
       write(content)
       return
     end
-    
+
     unless @skip_quicktag
       unless in_nested_quicktag?
         #write([" "]) 
@@ -146,10 +146,10 @@ class HTMLToConfluenceParser
     end
   end
 
-  PAIRS = { 'bq' => 'bq', 'p' => 'p' }
+  PAIRS = { 'bq' => 'bq', 'p' => 'p'}
   QUICKTAGS = { 'b' => '*', 'strong' => '*', 'del' => '-',
     'i' => '_', 'ins' => '+', 'u' => '+', 'em' => '_', 'cite' => '??', 
-    'sup' => '^', 'sub' => '~', 'code' => '@', 'span' => '%'}
+    'sup' => '^', 'sub' => '~', 'code' => '@'}
   
   PAIRS.each do |key, value|
     define_method "start_#{key}" do |attributes|
